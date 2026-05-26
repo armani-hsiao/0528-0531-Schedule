@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>5/28 - 5/31 行程表</title>
+<style>
+  :root {
+    --primary: #c97a6a;
+    --primary-dark: #a85d50;
+    --bg: #faf4f1;
+    --border: #e8d5cd;
+    --text: #333;
+    --muted: #888;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { color: var(--primary-dark); margin-bottom: 12px; }
+  .links { margin-bottom: 20px; }
+  .links a { color: var(--primary-dark); margin-right: 16px; }
+
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid var(--primary);
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    padding-top: 8px;
+    z-index: 10;
+  }
+  .tab {
+    padding: 12px 24px;
+    background: #f0e2dc;
+    border: none;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    transition: background 0.2s;
+  }
+  .tab:hover { background: #e8d0c5; }
+  .tab.active {
+    background: var(--primary);
+    color: white;
+  }
+
+  .panel { display: none; padding: 24px 0; }
+  .panel.active { display: block; }
+
+  .item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .time {
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .time .end { color: var(--muted); font-weight: 400; font-size: 13px; }
+  .content .activity {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .content .place {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .content .transport {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .content .note {
+    background: #fef7f3;
+    border-left: 3px solid var(--primary);
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #666;
+    border-radius: 4px;
+    margin-top: 6px;
+  }
+  a { color: var(--primary-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .item { grid-template-columns: 1fr; gap: 6px; }
+    .tab { padding: 10px 14px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>5/28 - 5/31 行程表</h1>
+  <div class="links">
+    <a href="https://www.threads.com/@fanme.official/post/DYy3jMVGKul" target="_blank">Fanme 行程表</a>
+    <a href="https://www.threads.com/@fanme.official/post/DYwexleE9yQ" target="_blank">入場須知（接駁車指南）</a>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-day="d528">5/28（四）</button>
+    <button class="tab" data-day="d529">5/29（五）</button>
+    <button class="tab" data-day="d530">5/30（六）</button>
+    <button class="tab" data-day="d531">5/31（日）</button>
+  </div>
+
+  <div class="panel active" id="d528">
+    <div class="item">
+      <div class="time">19:36<br><span class="end">~ 20:39</span></div>
+      <div class="content">
+        <div class="activity">搭乘高鐵</div>
+        <div class="place">高鐵台中站 → 高鐵台北站</div>
+        <div class="transport">63 分鐘</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">21:00</div>
+      <div class="content">
+        <div class="activity">Check in</div>
+        <div class="place"><a href="https://maps.app.goo.gl/eF2j8xSpikhKbMWq7" target="_blank">城美行旅</a></div>
+        <div class="transport">步行 5 分鐘</div>
+        <div class="note">跟櫃台說兩筆訂單合一</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">21:40</div>
+      <div class="content">
+        <div class="activity">朝聖你的圭屬店</div>
+        <div class="place"><a href="https://maps.app.goo.gl/GAvFu3HLziMpgnCT7" target="_blank">全家台發店</a></div>
+        <div class="transport">Uber 20 分鐘</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">22:00</div>
+      <div class="content">
+        <div class="activity">吃晚餐</div>
+        <div class="place"><a href="https://maps.app.goo.gl/PFnwEQS54DwbsDcN6" target="_blank">說故事黃金雞湯鍋</a></div>
+        <div class="transport">步行 10 分鐘</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="d529">
+    <div class="item">
+      <div class="time">10:30</div>
+      <div class="content">
+        <div class="activity">跟雙魚集合，一起前往快閃店</div>
+        <div class="place">台北車站</div>
+        <div class="transport">步行 10 分鐘</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">11:00</div>
+      <div class="content">
+        <div class="activity">拍<a href="https://www.threads.com/@rr_haehae/post/DYycElnn7WK" target="_blank">人生四格</a>、<a href="https://www.threads.com/@milk.0831/post/DYuQNZEGOqn" target="_blank">大地遊戲</a> / 太熱就逛百貨</div>
+        <div class="place"><a href="https://maps.app.goo.gl/wH7ByZg8rkTdN9Qj8" target="_blank">統一時代百貨台北店</a> 2 樓戶外夢廣場</div>
+        <div class="transport">捷運 15 分鐘</div>
+        <div class="note">需自備 50 元硬幣 × 4/張<br>若排隊太久，可於沒進快閃店時自由拍攝</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">11:50<br><span class="end">~ 12:30</span></div>
+      <div class="content">
+        <div class="activity">SJ Market 快閃店（雙魚）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/wH7ByZg8rkTdN9Qj8" target="_blank">統一時代百貨台北店</a> 2 樓戶外夢廣場</div>
+        <div class="note">帳號：雙魚自己的<br>場次開始前 15 分鐘排隊入場<br>當日用 Uniopen 刷滿 3000，可去 5 樓贈品處，持發票兌換<a href="https://instagram.ftpe7-2.fna.fbcdn.net/v/t51.82787-15/707270302_17917277586366020_2832867254192805872_n.jpg" target="_blank">隨機書籤</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">12:00<br><span class="end">~ 13:30</span></div>
+      <div class="content">
+        <div class="activity"><a href="https://maps.app.goo.gl/wYqM48BTtVh3Tgix8" target="_blank">FLIPPER'S</a>（2 位大人）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/wH7ByZg8rkTdN9Qj8" target="_blank">統一時代百貨台北店</a> 2 樓</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">12:40<br><span class="end">~ 13:20</span></div>
+      <div class="content">
+        <div class="activity">SJ Market 快閃店（Armani）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/wH7ByZg8rkTdN9Qj8" target="_blank">統一時代百貨台北店</a> 2 樓戶外夢廣場</div>
+        <div class="note">帳號：dodo19971110@gmail.com<br>場次開始前 15 分鐘排隊入場<br>當日用 Uniopen 刷滿 3000，可去 5 樓贈品處，持發票兌換<a href="https://instagram.ftpe7-2.fna.fbcdn.net/v/t51.82787-15/707270302_17917277586366020_2832867254192805872_n.jpg" target="_blank">隨機書籤</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">14:00<br><span class="end">~ 15:30</span></div>
+      <div class="content">
+        <div class="activity"><a href="https://maps.app.goo.gl/h9KBmhupUwi5mCv27" target="_blank">養心茶樓 信義店</a>（3 位大人）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/wH7ByZg8rkTdN9Qj8" target="_blank">統一時代百貨台北店</a> 4 樓</div>
+        <div class="note">問低銷 02 2722 6316</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">15:10<br><span class="end">~ 15:50</span></div>
+      <div class="content">
+        <div class="activity">SJ Market 快閃店（喬安）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/wH7ByZg8rkTdN9Qj8" target="_blank">統一時代百貨台北店</a> 2 樓戶外夢廣場</div>
+        <div class="note">帳號：armani1997japan@gmail.com<br>場次開始前 15 分鐘排隊入場<br>當日用 Uniopen 刷滿 3000，可去 5 樓贈品處，持發票兌換<a href="https://instagram.ftpe7-2.fna.fbcdn.net/v/t51.82787-15/707270302_17917277586366020_2832867254192805872_n.jpg" target="_blank">隨機書籤</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">17:00<br><span class="end">~ 17:30</span></div>
+      <div class="content">
+        <div class="activity">SOUND CHECK（彩排）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="transport">Uber 40 分鐘</div>
+        <div class="note">主辦時間表</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">19:00<br><span class="end">~ 22:00</span></div>
+      <div class="content">
+        <div class="activity">演唱會開場</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="note">主辦時間表，預計長度 3 小時<br>入場撕票時同一進行兌換福利，需先備好福利 QRCode 跟紙本票券</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">22:00</div>
+      <div class="content">
+        <div class="activity">包車回台北車站</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a> → 台北車站</div>
+        <div class="transport">開車 30 分鐘</div>
+        <div class="note">演唱會結束 40 分鐘內</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="d530">
+    <div class="item">
+      <div class="time">12:00</div>
+      <div class="content">
+        <div class="activity">吃午飯</div>
+        <div class="place"><a href="https://maps.app.goo.gl/MHHmfiVdbDPUENWk6" target="_blank">CAMPUS CAFE 站前店</a></div>
+        <div class="transport">步行 5 分鐘</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">16:00<br><span class="end">~ 16:30</span></div>
+      <div class="content">
+        <div class="activity">SOUND CHECK（彩排）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="transport">Uber 30 分鐘</div>
+        <div class="note">主辦時間表</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">17:00</div>
+      <div class="content">
+        <div class="activity">交換台灣展覽隨機卡（圭雲換澈赫）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="note">IG：ch.pinsy</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">18:00<br><span class="end">~ 21:00</span></div>
+      <div class="content">
+        <div class="activity">演唱會開場</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="note">主辦時間表，預計長度 3 小時<br>入場撕票時同一進行兌換福利，需先備好福利 QRCode 跟紙本票券</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">21:00</div>
+      <div class="content">
+        <div class="activity">散場後在靠近五權路的地方等<a href="https://instagram.ftpe7-1.fna.fbcdn.net/v/t51.82787-15/706079041_17915870661379275_4294461812169107239_n.jpg" target="_blank">接駁車</a></div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a> → 捷運新北產業園區站</div>
+        <div class="note">接駁車時段 20:30-22:00，15 分鐘一班<br>須主動出示門票</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="d531">
+    <div class="item">
+      <div class="time">12:00</div>
+      <div class="content">
+        <div class="activity">Check out</div>
+        <div class="place"><a href="https://maps.app.goo.gl/eF2j8xSpikhKbMWq7" target="_blank">城美行旅</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">12:30</div>
+      <div class="content">
+        <div class="activity">到會場寄放行李</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="transport">Uber 30 分鐘</div>
+        <div class="note">100 塊</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">14:00<br><span class="end">~ 14:30</span></div>
+      <div class="content">
+        <div class="activity">SOUND CHECK（彩排）</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="transport">Uber 30 分鐘</div>
+        <div class="note">主辦時間表</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">—</div>
+      <div class="content">
+        <div class="activity">無聊可去排周邊</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="note"><a href="https://instagram.ftpe7-3.fna.fbcdn.net/v/t51.82787-15/706357181_17915870673379275_5079788996319944095_n.jpg" target="_blank">場內地圖</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">—</div>
+      <div class="content">
+        <div class="activity">東西太多可先去寄件</div>
+        <div class="place"><a href="https://maps.app.goo.gl/jrZbirWWKph83dnz7" target="_blank">萊爾富五股五工店</a></div>
+        <div class="note"><a href="https://www.hilife.com.tw/HI_Shipping/hilife/03-1_storeToStore.aspx" target="_blank">店到店（西屯安墩店）</a> or <a href="https://www.hct.com.tw/Allocation/allocation_market.aspx" target="_blank">新竹物流</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">16:00<br><span class="end">~ 19:00</span></div>
+      <div class="content">
+        <div class="activity">演唱會開場</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a></div>
+        <div class="note">主辦時間表，預計長度 3 小時<br>入場撕票時同一進行兌換福利，需先備好福利 QRCode 跟紙本票券</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">19:00</div>
+      <div class="content">
+        <div class="activity">包車回台北車站</div>
+        <div class="place"><a href="https://maps.app.goo.gl/d7dU2GtiZi6WBy4J7" target="_blank">新北工商展覽中心</a> → 台北車站</div>
+        <div class="transport">開車 30 分鐘</div>
+        <div class="note">演唱會結束 40 分鐘內</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">19:51<br><span class="end">~ 20:38</span></div>
+      <div class="content">
+        <div class="activity">搭乘高鐵（備選班次一）</div>
+        <div class="place">高鐵台北站 → 高鐵台中站</div>
+        <div class="transport">47 分鐘</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="time">20:31<br><span class="end">~ 21:18</span></div>
+      <div class="content">
+        <div class="activity">搭乘高鐵（備選班次二）</div>
+        <div class="place">高鐵台北站 → 高鐵台中站</div>
+        <div class="transport">47 分鐘</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.day).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
